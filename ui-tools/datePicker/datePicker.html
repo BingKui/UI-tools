@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+			<link rel="stylesheet" type="text/css" href="css/datePicker.css"/>
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="demo" id="demo" value="" placeholder="请选择时间"/>
+	</body>
+	<script src="../lib/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/datePicker.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#demo").datePicker({
+				istime: true,
+				isFestival: false,
+				isClear:true,
+				clear: function() {
+					alert("--clear success--");
+				},
+				select: function() {
+					alert();
+				}
+			});
+		});
+	</script>
+</html>

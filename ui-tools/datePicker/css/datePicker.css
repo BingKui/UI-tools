@@ -1,0 +1,474 @@
+html {
+	_background-image: url(about:blank);
+	_background-attachment: fixed;
+}
+.laydate_box,
+.laydate_box * {
+	margin: 0;
+	padding: 0;
+}
+.laydate_box {
+	width: 256px;
+	height: 298px;
+	border: 1px solid #ccc;
+	font: 12px '\5B8B\4F53';
+	z-index: 99999999;
+	*margin: -2px 0 0 -2px;
+	*overflow: hidden;
+	_margin: 0;
+	_position: absolute!important;
+	
+	/*调试，后期可删除*/
+	background-color: #fff;
+}
+.laydate_box li {
+	list-style: none;
+}
+.laydate_box .laydate_void {
+	cursor: text!important;
+}
+.laydate_box a,
+.laydate_box a:hover {
+	text-decoration: none;
+	blr: expression(this.onFocus=this.blur());
+	cursor: pointer;
+}
+.laydate_box a:hover {
+	text-decoration: none;
+}
+.laydate_box .laydate_yms,
+.laydate_box .laydate_time {
+	display: none;
+}
+.laydate_box .laydate_show {
+	display: block;
+}
+.laydate_box input {
+	outline: 0;
+	font-size: 14px;
+	background-color: #fff;
+}
+/*顶部样式*/
+.laydate_top {
+	position: relative;
+	height: 34px;
+	z-index: 99;
+	width: auto;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.laydate_choose {
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	width: 20px;
+	height: 20px;
+	padding: 7px;
+	color: #ccc;
+	line-height: 20px;
+}
+.laydate_y input {
+	text-align: right;
+}
+.laydate_m input {
+	text-align: left;
+}
+/*中间日期样式*/
+.laydate_ym {
+	display: block;
+	float: left;
+	height: 34px;
+	width: 128px;
+	line-height: 34px;
+}
+.laydate_ym input {
+	width: 50px;
+	height: 34px;
+	display: block;
+	float: left;
+	border: none;
+	text-align: center;
+	line-height: 34px;
+	font-family: helvetica "微软雅黑";
+	font-size: 14px;
+	color: #44abe5;
+	text-decoration: underline;
+	font-weight: bold;
+	cursor: pointer;
+}
+.laydate_ym .laydate_yms {
+	position: absolute;
+	top: 35px;
+	width: 256px;
+	height: 218px;
+	background-color: #fff;
+}
+/*选择图标位置*/
+.laydate_y .laydate_chprev{
+	position: absolute;
+	left: 5px;
+}
+.laydate_y .laydate_chprev:hover,
+.laydate_y .laydate_chnext:hover,
+.laydate_m .laydate_chprev:hover,
+.laydate_m .laydate_chnext:hover{
+	color: #44ABE5;
+}
+.laydate_y .laydate_chnext{
+	position: absolute;
+	right: 0;
+}
+#laydate_y{
+	position: absolute;
+	left: 75px;
+}
+.laydate_m .laydate_chprev{
+	position: absolute;
+	left: 35px;
+}
+.laydate_m .laydate_chnext{
+	position: absolute;
+	right: 30px;
+}
+#laydate_m{
+	position: absolute;
+	right: 70px;
+}
+/*选择年份下拉样式*/
+.laydate_y .laydate_yms .laydate_tab:hover{
+	color: #44ABE5;
+	background-color: #DBECF9;
+}
+.laydate_y .laydate_yms {
+	width: 256px;
+	left: 0;
+	text-align: center;
+	background-color: rgba(255,255,255,1);
+}
+.laydate_y .laydate_yms:before {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	display: block;
+	border: 6px solid transparent;
+	border-top-width: 0;
+	border-bottom-color: #ccc;
+	left: 91px;
+	top:-6px;
+}
+.laydate_y .laydate_yms:after {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	display: block;
+	border: 5px solid transparent;
+	border-top-width: 0;
+	border-bottom-color: #fff;
+	left: 92px;
+	top:-5px;
+}
+/*年份选择样式*/
+.laydate_y .laydate_yms a {
+	position: relative;
+	display: block;
+	float: left;
+	height: 28px;
+	width: 50px;
+	line-height: 28px;
+	font-size: 18px;
+	font-weight: bold;
+	margin:13px 17px;
+}
+.laydate_y .laydate_yms ul {
+	height: 219px;
+	padding: 0 0 0 2px;
+}
+.laydate_y .laydate_yms ul li {
+	float: left;
+	width: 50px;
+	height: 28px;
+	display: block;
+	float: left;
+	line-height: 28px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin:13px 17px;
+}
+.laydate_y .laydate_yms ul li:hover{
+	background-color: #DBECF9;
+}
+.laydate_y .laydate_yms .laydate_chdown{
+	position: absolute;
+	right: 3px;
+	bottom: 0;
+	text-align: center;
+}
+
+
+#laydate_ys .laydate_click{
+	background-color: #44ABE5;
+	color: #fff;
+}
+/*选择月份下拉样式*/
+.laydate_m .laydate_yms {
+	width: 246px;
+	height: 213px;
+	left: 0;
+	text-align: center;
+	padding:5px 5px 0 5px;
+	background-color: #fff;
+}
+#laydate_m{
+	text-align: left;
+}
+.laydate_m .laydate_yms:before {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	display: block;
+	border: 6px solid transparent;
+	border-top-width: 0;
+	border-bottom-color: #ccc;
+	right: 97px;
+	top:-6px;
+}
+.laydate_m .laydate_yms:after {
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	display: block;
+	border: 5px solid transparent;
+	border-top-width: 0;
+	border-bottom-color: #fff;
+	right: 98px;
+	top:-5px;
+}
+.laydate_m .laydate_yms span {
+	display: block;
+	font-family: helvetica "微软雅黑";
+	float: left;
+	width: 50px;
+	height: 30px;
+	margin: 11px 15px;
+	line-height: 30px;
+	text-align: center;
+	_display: inline;
+}
+.laydate_m .laydate_yms span:hover{
+	background-color: #DBECF9;
+}
+.laydate_m .laydate_yms .laydate_click{
+	background-color: #44ABE5;
+	color: #fff;
+}
+.laydate_m .laydate_yms .laydate_click:hover{
+	background-color: #44ABE5;
+	color: #fff;
+}
+/*日期填充格式*/
+.laydate_table {
+	width: 216px;
+	margin: 20px;
+	height: 179px;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	font-family: helvetica "微软雅黑";
+}
+.laydate_table td {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 12px;
+}
+.laydate_table td:hover{
+	background-color: #DBECF9;
+}
+.laydate_table thead {
+	height: 22px;
+	line-height: 22px;
+}
+.laydate_table thead th {
+	font-weight: 400;
+	font-size: 12px;
+	text-align: center;
+}
+.laydate_table .laydate_click{
+	background-color: #44ABE5;
+	color: #fff;
+}
+/*底部按钮*/
+.laydate_bottom {
+	position: relative;
+	height: 42px;
+	line-height: 42px;
+	font-size: 12px;
+	border-top: 1px solid #ccc;
+	line-height: 43px;
+}
+/*时分秒框位置*/
+.laydate_bottom #laydate_hms {
+	position: relative;
+	left: 10px;
+	top: 7px;
+	z-index: 1;
+	float: left;
+	width:110px;
+	height: 28px;
+	overflow: hidden;
+}
+/*时间选择*/
+.laydate_time {
+	position: absolute;
+	display: block;
+	bottom: 43px;
+	left: 0;
+	width: 256px;
+	height: 219px;
+	overflow: hidden;
+	background-color: #fff;
+}
+.laydate_time .laydate_hmsno {
+	padding: 10px 0 0 10px;
+}
+.laydate_time .laydate_hmsno span {
+	display: block;
+	float: left;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	font-family: helvetica "微软雅黑";
+	cursor: pointer;
+	margin: 4px 16px;
+	background-color: #fff;
+}
+.laydate_time .laydate_hmsno .laydate_click{
+	color: #fff;
+	background-color: #44abe5;
+}
+.laydate_time .laydate_hmsno span:hover{
+	background-color: #dbecf9;
+}
+
+/*分钟、秒钟选择样式*/
+.laydate_time1 {
+	width: 256px;
+	height: 219px;
+}
+.laydate_time1 .laydate_hmsno {
+	padding: 3px;
+}
+.laydate_time1 .laydate_hmsno span {
+	display: block;
+	float: left;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	cursor: pointer;
+	margin: 5px 0px;
+	background-color: #fff;
+}
+.laydate_time1 .laydate_hmsno .laydate_click{
+	color: #fff;
+	background-color: #44abe5;
+}
+.laydate_msg {
+	left: 49px;
+	bottom: 67px;
+	width: 141px;
+	height: auto;
+	overflow: hidden;
+}
+.laydate_msg p {
+	padding: 5px 10px;
+}
+.laydate_bottom li {
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	border-right: none;
+	font-weight: 900;
+}
+/*时分秒输入框*/
+.laydate_bottom input {
+	float: left;
+	width: 28px;
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #ccc;
+	text-align: center;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 400;
+	font-family: helvetica "微软雅黑";
+}
+.laydate_bottom input:active{
+	border-color: #44ABE5;
+	background-color: #DBECF9;
+}
+.laydate_bottom input:focus{
+	border-color: #44ABE5;
+	background-color: #DBECF9;
+}
+.laydate-time-format{
+	width: 10px;
+	text-align: center;
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	float: left;
+}
+
+
+/*底部按钮*/
+.laydate_bottom .laydate_btn {
+	position: absolute;
+	right: 10px;
+	top: 7px;
+}
+.laydate_bottom .laydate_btn a {
+	float: left;
+	height: 26px;
+	width: 50px;
+	text-align: center;
+	line-height: 26px;
+	border: 1px solid #ccc;
+	font-family: "微软雅黑";
+	color: #44ABE5;
+	font-weight: bold;
+}
+.laydate_bottom .laydate_btn a:hover{
+	border-color: #44ABE5;
+}
+.laydate_bottom .laydate_btn a:active{
+	border-color: #44ABE5;
+	background-color: #DBECF9;
+}
+/*确定按钮*/
+#laydate_ok{
+	margin-left: 6px;
+}
+.laydate_bottom .laydate_v {
+	position: absolute;
+	left: 10px;
+	top: 6px;
+	font-family: Courier;
+	z-index: 0;
+}
+
+/*不可选择*/
+.laydate_nothis{
+	color: #ccc;
+}
+.laydate_void{
+	background-color: #f3f3f3;
+}
+
