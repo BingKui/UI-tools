@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.search_bar {
+				position: relative;
+				margin-top: 10px;
+				width: 0%;
+				min-width: 60px;
+				height: 60px;
+				float: right;
+				overflow: hidden;
+				-webkit-transition: width 0.3s;
+				-moz-transition: width 0.3s;
+				transition: width 0.3s;
+				-webkit-backface-visibility: hidden;
+				background: #162934;
+			}
+			.input {
+				position: absolute;
+				top: 0;
+				right: 0;
+				border: none;
+				outline: none;
+				width: 98%;
+				height: 60px;
+				line-height: 60px;
+				z-index: 10;
+				font-size: 20px;
+				color: #f9f9f9;
+				background: transparent
+			}
+			.search_ico,
+			.search_btn {
+				width: 60px;
+				height: 60px;
+				display: block;
+				position: absolute;
+				right: 0;
+				top: 0;
+				padding: 0;
+				margin: 0;
+				line-height: 60px;
+				cursor: pointer;
+			}
+			.search_ico {
+				background: #e67e22 url(icon.png) no-repeat 18px 20px;
+				z-index: 90;
+			}
+			.search_open {
+				width: 100% !important;
+				z-index: 1002
+			}
+			#show {
+				position: absolute;
+				padding: 20px
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="search_bar" class="search_bar">
+			<form id="myform">
+				<input class="input" placeholder="想搜点什么呢..." type="text" name="key" id="search">
+				<input class="search_btn" type="submit" value="">
+				<span class="search_ico"></span>
+			</form>
+		</div>
+	</body>
+	<script src="lib/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".search_ico").click(function() {
+				$(".search_bar").toggleClass('search_open');
+				var keys = $("#search").val();
+				if (keys.length > 2) {
+					$("#search").val('');
+					$("#myform").submit();
+				} else {
+					return false;
+				}
+			});
+		});
+	</script>
+
+</html>
